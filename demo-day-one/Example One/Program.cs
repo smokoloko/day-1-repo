@@ -8,7 +8,7 @@ namespace Example_One
         {
             
             int n = int.Parse(Console.ReadLine());
-            double sum = 0;
+            ulong sum = 0;
             double[,] matrix = new double[n, n];
             for(int i = 0; i<n; i++)
             {
@@ -17,12 +17,12 @@ namespace Example_One
                     matrix[i, f] = Math.Pow(2, i + f);
                     if(i >= f)
                     {
-                        sum += matrix[i, f];
+                        sum += (ulong)matrix[i, f];
                     }
                 }
             }
-            BigInteger result = (BigInteger)sum; 
-            Console.WriteLine(result);
+             
+            Console.WriteLine(sum);
         }
     }
 }
