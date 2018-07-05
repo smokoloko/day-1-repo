@@ -22,7 +22,7 @@ namespace Example_One
                     matrix[i, f] = (int)Math.Pow(2,coef);
                     coef++;
                     Console.Write(matrix[i, f] + " ");
-                    if(f >= n/2 && i >= n / 2)
+                    if(f >= i)
                     {
                         sum += matrix[i, f];
                     }
