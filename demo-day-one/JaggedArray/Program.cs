@@ -11,36 +11,29 @@ namespace JaggedArray
         static void Main(string[] args)
         {
             var arr = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray<int>();
-            int[][] jagged = new int[3][];
-            int counterZero = 0;
-            int counterOne = 0;
-            int counterTwo = 0;
+            List<int> zero = new List<int>();
+            List<int> one = new List<int>();
+            List<int> two = new List<int>();
             for (int i = 0; i < arr.Length; i++)
             {
-                
-
-                if(arr[i]%3 ==0)
+                if(arr[i] % 3 == 0)
                 {
-                    counterZero++;
+                    zero.Add(arr[i]);
                 }
-                else if(arr[i]%3 == 1)
+                else if(arr[i] % 3 == 1)
                 {
-                    counterOne++;
+                    one.Add(arr[i]);
                 }
                 else
                 {
-                    counterTwo++;
-                }
-
-            }
-            for (int i = 0; i < arr.Length; i++)
-            {
-                jagged[i] = new int[counterZero];
-                for (int f = 0; f < counterZero; f++)
-                {
-                    
+                    two.Add(arr[i]);
                 }
             }
+            Console.WriteLine(String.Join(" ", zero.ToArray()));
+            Console.WriteLine(String.Join(" ", one.ToArray()));
+            Console.WriteLine(String.Join(" ", two.ToArray()));
+        }
         }
     }
-}
+
+
